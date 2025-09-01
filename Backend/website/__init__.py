@@ -2,14 +2,20 @@ from flask import Flask
 from flask_cors import CORS
 from os import path 
 from flask_login import LoginManager
+import mysql.connector
 
 
 def create_app():
     app = Flask(__name__)
-    # app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///mydatabase.db"
-    app.config ['SECRET_KEY'] = "studyspacereview"
-    # db = SQLAlchemy(app)
     CORS(app)
+
+    db_config = {
+        
+    }
+    conn = mysql.connect()
+    cursor =conn.cursor()
+
+    
 
     from .main_page import main_page
     from .auth import auth
