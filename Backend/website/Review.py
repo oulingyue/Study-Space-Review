@@ -1,4 +1,3 @@
-from app import db
 import uuid
 import datetime
 '''
@@ -16,7 +15,7 @@ class Review():
         self.rating = rating 
         self.location = location
         self.time_edited = datetime.datetime.now()
-        self.id = str(uuid.uuid6())
+        self.id = str(uuid.uuid1())
 
     def to_dict(self): 
         return {
@@ -29,5 +28,3 @@ class Review():
 
     def change_rating(self, new_rating: int):
         self.rating = new_rating
-
-    def add 
